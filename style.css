@@ -1,0 +1,117 @@
+body{
+    background-color:#f0f4f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+.card{
+    margin: 0 auto;
+    height: 650px;
+    width: 420px;
+    background-color: white;
+    position: static;
+    border-radius: 8px;
+    box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.1);
+    display: block;
+}
+
+.card h2{
+    text-align: left;
+    padding-top: 28px;
+    font-weight: bold;
+    font-size: 25px;
+    margin-left: 45px;
+}
+
+.logo{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 40px;
+}
+
+.logo h3{
+    margin: 0 auto;
+    padding-top: 20px;
+}
+
+.logo p{
+    margin: 0 auto;
+    padding-top: 6px;
+    font-size: small;
+    color:rgb(138, 138, 138)
+}
+
+.button_logo{
+    background-color: #1E6F5C;
+    color: white;
+    font-size: 40px;
+    height: 58px;
+    width: 14%;
+    border-radius: 20%;
+    border-color: white;
+    border-style: none;
+}
+
+.form_name{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.form_name label{
+    margin-left: 45px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.form_name input{
+    width: 77%;
+    height: 40px;
+    border-radius: 10px;
+    border: 1px solid gainsboro;
+    padding-left: 13px;
+    margin-left: 43px;
+
+    &:focus, 
+    &:active,
+    &:focus-visible{
+        outline: none;
+        border: 1px solid #1E6F5C;
+    }
+}
+
+#email{
+    margin-bottom: 30px;
+}
+
+#not_account{
+    margin: 0 auto;
+    font-size: 14px;
+    padding-top: 80px;
+    padding-left: 120px;
+}
+
+#create_account{
+  color: #1E6F5C; 
+  font-weight: bold; 
+}
+
+#submit{
+    background-color: #1E6F5C;
+    color: white;
+    margin-top: 30px;
+    margin-left: 40px;
+    border-color: rgb(5, 184, 5);
+    border-style: none;
+    height: 54px;
+    width: 80%;
+    border-radius: 15px;
+    font-size: 18px;
+    font-weight: bold;
+}
