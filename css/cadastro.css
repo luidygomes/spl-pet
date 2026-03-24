@@ -3,13 +3,12 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
     font-family: sans-serif;
 }
 
 .card{
-    margin: 0 auto;
-    height: 650px;
+    margin: auto;
+    height: 950px;
     width: 420px;
     background-color: white;
     position: static;
@@ -57,26 +56,27 @@ body{
     border-style: none;
 }
 
-.form_name{
+.form_register{
     display: flex;
     flex-direction: column;
     margin-top: 15px;
     margin-bottom: 15px;
 }
 
-.form_name label{
+.form_register label{
     margin-left: 45px;
     margin-bottom: 5px;
     font-size: 14px;
 }
 
-.form_name input{
+.form_register input{
     width: 77%;
     height: 40px;
     border-radius: 10px;
     border: 1px solid gainsboro;
     padding-left: 13px;
     margin-left: 43px;
+    margin-bottom: 10px;
 
     &:focus, 
     &:active,
@@ -86,32 +86,69 @@ body{
     }
 }
 
-#email{
-    margin-bottom: 30px;
+.erro{
+    color: red;
+    font-size: 0.75rem;
+    margin-left: 42px;
+    margin-bottom: 10px;
+    display: block;
+    cursor: default;
 }
 
-#not_account{
+input.input-erro{
+    border: 2px solid red;
+}
+
+#have_account{
     margin: 0 auto;
     font-size: 14px;
-    padding-top: 80px;
-    padding-left: 120px;
+    padding-top: 1px;
+    padding-left: 140px;
 }
 
-#create_account{
+#button_login_account{
   color: #1E6F5C; 
   font-weight: bold; 
+  font-size: 14px;
+  border: 0;
+  cursor: pointer;
+}
+
+#account_invalid{
+    margin: 0 auto;
+    opacity: 0;
+    color: rgb(215, 0, 0);
+    font-size: 16px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+}
+
+span{
+    cursor: pointer;
 }
 
 #submit{
     background-color: #1E6F5C;
     color: white;
-    margin-top: 30px;
-    margin-left: 40px;
+    margin-top: 10px;
+    margin-left: 30px;
+    margin-bottom: 0;
     border-color: rgb(5, 184, 5);
     border-style: none;
-    height: 54px;
-    width: 80%;
+    height: 40px;
+    width: 89%;
     border-radius: 15px;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
+    cursor: pointer;
+}
+
+#protected_data{
+    margin: 0 auto;
+    font-size: 12px;
+    padding-top: 17px;
+    padding-left: 10px;
+    text-align: center;
+    color:rgb(161, 161, 162)
 }

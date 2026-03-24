@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPL - Saúde em Primeiro Lugar</title>
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+    <div class="card">
+        <div class="logo">
+            <button class="button_logo">+</button>
+            <h3>SPL</h3>
+            <p>Saúde em Primeiro Lugar</p>
+        </div>
+        <div class="form">
+            <h2>Entrar</h2>
+            <form class="form_name">
+                <label for ="email">E-mail</label>
+                <input id="email" type="email" required autocomplete="off">
+
+                <label for ="senha">Senha</label>
+                <input id="senha" type="password" required>
+
+                <input id="submit" type="submit" value="Entrar" onclick="accountVerification(event)">
+            </form>
+            <p id="account_invalid">Usuário ou senha inválido. Caso não seja cadastrado, <span onclick="alert('Tela de Cadastro será disponível em breve!');">crie uma conta!</span></p>
+            <p id="not_account">Não tem conta?<button id="button_create_account" onclick="alert('Tela de Cadastro será disponível em breve!');">Criar conta</button></p>
+        </div>
+    </div>
+    <script src="js/login.js"></script>
+</body>
+</html>

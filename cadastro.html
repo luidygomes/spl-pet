@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPL - Saúde em Primeiro Lugar</title>
+    <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body>
+    <div class="card">
+        <div class="logo">
+            <button class="button_logo">+</button>
+            <h3>SPL</h3>
+            <p>Saúde em Primeiro Lugar</p>
+        </div>
+        <div class="form">
+            <h2>Crie sua conta</h2>
+            <form class="form_register">
+                <label for ="name">Nome completo</label>
+                <input id="name" type="name" required>
+                <span class="erro" id="erro-name"></span>
+
+                <label for ="cpf">CPF</label>
+                <input id="cpf" type="text" required placeholder="000.000.000-00">
+                <span class="erro" id="erro-cpf"></span>
+
+                <label for ="tel">Telefone</label>
+                <input id="tel" type="tel" required placeholder="(00) 00000-0000">
+                <span class="erro" id="erro-tel"></span>
+
+                <label for="email">E-mail</label>
+                <input id="email" type="email" required>
+                <span class="erro" id="erro-email"></span>
+
+                <label for="senha">Senha</label>
+                <input id="senha" type="password" required>
+                <span class="erro" id="erro-senha"></span>
+
+                <label for="confirm_senha">Confirmar senha</label>
+                <input id="confirm_senha" type="password" required>
+                <span class="erro" id="erro-confirm-senha"></span>
+
+                <input id="submit" type="submit" value="Criar conta" onclick="accountCreate(event)">
+            </form>
+            <p id="have_account">Já tem conta?<button id="button_login_account" onclick="alert('Tela de Cadastro será disponível em breve!');">Entrar</button></p>
+        </div>
+        <p id="protected_data">Seus dados são protegidos e não serão compartilhados.</p>
+    </div>
+    <script src="js/cadastro.js"></script>
+</body>
+</html>
