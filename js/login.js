@@ -2,12 +2,11 @@ const emailInput = document.getElementById("email");
 const senhaInput = document.getElementById("senha");
 const submitBtn = document.getElementById("submit");
 
-// começa desabilitado
 submitBtn.style.opacity = 0.5;
 submitBtn.style.cursor = "default";
 
 function verificarCampos() {
-    const emailValido = emailInput.validity.valid; // usa a validação nativa do HTML
+    const emailValido = emailInput.validity.valid;
     const senhaPreenchida = senhaInput.value.length > 0;
 
     if(emailValido && senhaPreenchida) {
@@ -36,7 +35,7 @@ function accountVerification(event){
             invalidation.style.opacity = 1;
         }
     } else {
-        email.reportValidity();
         senha.reportValidity();
+        email.reportValidity();
     }
 }
