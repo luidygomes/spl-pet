@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulario de Contato</title>
+    <title>SPL - Saúde em Primeiro Lugar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,16 +17,17 @@
             <h2>Entrar</h2>
             <form class="form_name">
                 <label for ="email">E-mail</label>
-                <input id="email" type="email" required>
+                <input id="email" type="email" required autocomplete="off">
 
-                <label id="senha" for ="senha">Senha</label>
+                <label for ="senha">Senha</label>
                 <input id="senha" type="password" required>
 
-                <input id="submit" type="submit" value="Entrar" form="form_name">
+                <input id="submit" type="submit" value="Entrar" onclick="accountVerification()">
             </form>
+            <p id="account_invalid">Usuário ou senha inválido. Caso não seja cadastrado, crie uma conta!</p>
             <p id="not_account">Não tem conta?<span id="create_account"> Criar conta</span></p>
         </div>
     </div>
-    
+    <script src="script.js"></script>
 </body>
 </html>
