@@ -1,12 +1,42 @@
-function accountVerification(){
-    event.preventDefault();
-    const email = document.getElementById("email").value;
-    const senha = document.getElementById("senha").value;
-    const invalidation = document.getElementById("account_invalid");
-    if (email === "test@mail.com" && senha === "senha") {
-        alert("O Dashboard será disponibilizado em breve!");
-        invalidation.style.opacity = 0;
+const emailInput = document.getElementById("email");
+const senhaInput = document.getElementById("senha");
+const submitBtn = document.getElementById("submit");
+
+// começa desabilitado
+submitBtn.style.opacity = 0.5;
+submitBtn.style.cursor = "default";
+
+function verificarCampos() {
+    const emailValido = emailInput.validity.valid; // usa a validação nativa do HTML
+    const senhaPreenchida = senhaInput.value.length > 0;
+
+    if(emailValido && senhaPreenchida) {
+        submitBtn.disabled = false;
+        submitBtn.style.opacity = 1;
+        submitBtn.style.cursor = "pointer";
     } else {
-        invalidation.style.opacity = 1;
+        submitBtn.style.opacity = 0.5;
+        submitBtn.style.cursor = "default";
+    }
+}
+
+emailInput.addEventListener("input", verificarCampos);
+senhaInput.addEventListener("input", verificarCampos);
+
+function accountVerification(event){
+    event.preventDefault();
+    const email = document.getElementById("email");
+    const senha = document.getElementById("senha");
+    const invalidation = document.getElementById("account_invalid");
+    if(email.validity.valid && senha.value.length > 0) {
+        if (email.value === "test@mail.com" && senha.value === "senha") {
+            alert("O Dashboard será disponibilizado em breve!");
+            invalidation.style.opacity = 0;
+        } else {
+            invalidation.style.opacity = 1;
+        }
+    } else {
+        email.reportValidity();
+        senha.reportValidity();
     }
 }

@@ -97,9 +97,12 @@ body{
     padding-left: 120px;
 }
 
-#create_account{
+#button_create_account{
   color: #1E6F5C; 
   font-weight: bold; 
+  font-size: 14px;
+  border: 0;
+  cursor: pointer;
 }
 
 #account_invalid{
@@ -110,6 +113,10 @@ body{
     padding-left: 10px;
     padding-right: 10px;
     text-align: center;
+}
+
+span{
+    cursor: pointer;
 }
 
 #submit{
@@ -124,4 +131,5 @@ body{
     border-radius: 15px;
     font-size: 18px;
     font-weight: bold;
+    cursor: pointer;
 }

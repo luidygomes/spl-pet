@@ -22,10 +22,10 @@
                 <label for ="senha">Senha</label>
                 <input id="senha" type="password" required>
 
-                <input id="submit" type="submit" value="Entrar" onclick="accountVerification()">
+                <input id="submit" type="submit" value="Entrar" onclick="accountVerification(event)">
             </form>
-            <p id="account_invalid">Usuário ou senha inválido. Caso não seja cadastrado, crie uma conta!</p>
-            <p id="not_account">Não tem conta?<span id="create_account"> Criar conta</span></p>
+            <p id="account_invalid">Usuário ou senha inválido. Caso não seja cadastrado, <span onclick="alert('Tela de Cadastro será disponível em breve!');">crie uma conta!</span></p>
+            <p id="not_account">Não tem conta?<button id="button_create_account" onclick="alert('Tela de Cadastro será disponível em breve!');">Criar conta</button></p>
         </div>
     </div>
     <script src="script.js"></script>
