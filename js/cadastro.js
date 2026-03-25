@@ -17,7 +17,7 @@ function accountCreate(event){
     const email = document.getElementById("email");
     const senha = document.getElementById("senha");
     const confirmSenha = document.getElementById("confirm_senha");
-    const invalidation = document.getElementById("account_invalid");
+    const btn = document.getElementById("submit");
 
     limparErro(name, "erro-name");
     limparErro(cpf, "erro-cpf");
@@ -32,7 +32,7 @@ function accountCreate(event){
         mostrarErro(name,"erro-name","O nome precisa ser preenchido!");
         valido = false;
     }
-    if(!regexCpf.test(cpf.value) || cpf.value.length < 11){
+    if(!regexCpf.test(cpf.value)){
         mostrarErro(cpf,"erro-cpf","CPF inválido! Use o formato '000.000.000-00'");
         valido = false;
     }
@@ -50,10 +50,55 @@ function accountCreate(event){
         valido = false;
     }
     if (confirmSenha.value !== senha.value) {
-        mostrarErro(confirm_senha,"erro-confirm-senha","As senhas não coincidem.");
+        mostrarErro(confirmSenha,"erro-confirm-senha","As senhas não coincidem.");
         valido = false;
     }
+    if(valido) {
+        btn.disabled = true;
+        btn.value = "Criando conta..."
+        postData();
+    }
+}
 
-    if(valido)
-        alert("Página de Dashboard disponível em breve!");
+async function postData(){
+    const dados = {
+        nome:       document.getElementById("name").value.trim(),
+        cpf:        document.getElementById("cpf").value.trim(),
+        telefone:   document.getElementById("tel").value.trim(),
+        email:      document.getElementById("email").value.trim(),
+        senha:      document.getElementById("senha").value
+    };
+
+    try {
+        const resposta = await fetch('http://localhost:5000/api/auth/cadastro', {
+            method: 'POST',
+
+            headers: {'Content-Type': 'application/json' },
+
+            body: JSON.stringify(dados)
+        });
+
+        const json = await resposta.json();
+        console.log(json);
+
+        if(resposta.ok) {
+            localStorage.setItem('spl_token', json.token);
+
+            alert("Página de Triagem disponível em breve!");
+        } else{
+            const erroApi = document.getElementById('erro-api');
+            erroApi.textContent = json.erro;
+            erroApi.style.display = 'block';
+        }
+
+    } catch (erro) {
+        const erroApi = document.getElementById('erro-api');
+        erroApi.textContent = 'Não foi possível conectar ao servidor.';
+        erroApi.style.display = 'block';
+
+    } finally {
+        const submit = document.getElementById("submit");
+        submit.disabled = false;
+        submit.value = "Criar conta";
+    }
 }
