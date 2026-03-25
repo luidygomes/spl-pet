@@ -95,6 +95,19 @@ body{
     cursor: default;
 }
 
+.erro-api{
+    background: #fff5f5; 
+    border: 1px solid #f09595; 
+    border-radius: 8px; 
+    color: #a32d2d; 
+    font-size: 13px; 
+    padding: 10px 14px;
+    margin-top: 1rem; 
+    margin-bottom: 1rem; 
+    display: none;
+    text-align: center;
+}
+
 input.input-erro{
     border: 2px solid red;
 }
